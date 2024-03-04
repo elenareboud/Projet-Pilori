@@ -10,9 +10,10 @@ Le site devra correctement s'afficher sur l'ensemble des écrans (à partir de 3
 
 __Les breakpoints :__
 
-* Petit > 50rem
-* Tablette > 60rem
-* Ordinateur > 90rem
+* Très petit < 800px
+* Petit > 800px
+* Tablette > 960px
+* Ordinateur > 1440px
 
 ### Technologies utilisées
 

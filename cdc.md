@@ -1,51 +1,5 @@
 # Cahier des charges - PilOri
 
-## Sommaire 
-
-- [Cahier des charges - PilOri](#cahier-des-charges---pilori)
-  - [Sommaire](#sommaire)
-  - [Contexte](#contexte)
-  - [Objectifs](#objectifs)
-  - [Budget](#budget)
-  - [Délai](#délai)
-  - [Itérations par avenant](#itérations-par-avenant)
-  - [Design](#design)
-  - [Contenus](#contenus)
-    - [Boutons de report](#boutons-de-report)
-    - [Header (présent sur toutes les pages du site)](#header-présent-sur-toutes-les-pages-du-site)
-    - [Footer (présent sur toutes les pages du site)](#footer-présent-sur-toutes-les-pages-du-site)
-    - [Page d'accueil](#page-daccueil)
-    - [Page Toutes les Tomates](#page-toutes-les-tomates)
-    - [Page Site tomaté](#page-site-tomaté)
-    - [Page Connexion](#page-connexion)
-    - [Page d'inscription](#page-dinscription)
-    - [Pages Mentions légales, Plan du site, Contact](#pages-mentions-légales-plan-du-site-contact)
-    - [Page Membre](#page-membre)
-    - [Page Membre - Modification](#page-membre---modification)
-    - [Page d'erreur 404](#page-derreur-404)
-    - [Langue](#langue)
-  - [Contraintes techniques](#contraintes-techniques)
-    - [Accessibilité](#accessibilité)
-    - [Compatibilité](#compatibilité)
-    - [Responsive](#responsive)
-    - [Technologies utilisées](#technologies-utilisées)
-  - [Livraisons](#livraisons)
-- [Annexes](#annexes)
-  - [Wireframes](#wireframes)
-    - [Wireframe Accueil](#wireframe-accueil)
-    - [Wireframe Inscription](#wireframe-inscription)
-    - [Wireframe Connexion](#wireframe-connexion)
-    - [Wireframe Page Membre](#wireframe-page-membre)
-    - [Wireframe Page Membre - Modification](#wireframe-page-membre---modification)
-    - [Wireframe Site tomaté](#wireframe-site-tomaté)
-    - [Wireframe Toutes les tomates](#wireframe-toutes-les-tomates)
-  - [Images du site](#images-du-site)
-    - [Logo de PilOri](#logo-de-pilori)
-    - [Bandeau de la homepage](#bandeau-de-la-homepage)
-    - [Image utilisateur non connecté](#image-utilisateur-non-connecté)
-    - [Image utilisateur connecté sans avatar](#image-utilisateur-connecté-sans-avatar)
-
-
 ## Contexte
 
 T'Omatz est une association de sensibilisation à l'accessibilité web. 
@@ -78,12 +32,8 @@ Des pénalités de retard pourront être demandées par le client en cas de dép
 A été contractualisé que le contrat serait sujet à des avenants après chaque itération afin que le client reste toujours au centre du projet.
 Lors de chaque avenant aura lieu la mise à jour des sections relatives à l'itération en cours mais également des sections suivantes :
 
-* [Technologies utilisées](#technologies-utilisées)
-* [Livraisons](#livraisons)
 
 ## Design
-
-Les wireframes du site sont disponibles en annexe [Wireframes](#wireframes)
 
 Un site épuré qui offre une lecture facile des contenus. Le choix des couleurs sera transmis par le client par avenant au présent cahier des charges.
 
@@ -113,7 +63,7 @@ Une liste de boutons sera disponible sur chaque affichage des report (liste ou r
 * Liens vers les pages : Plan du site, mentions légales et contact.
 
 ### Page d'accueil
-* [Wireframe Accueil](#wireframe-accueil)
+  
 * Bandeau de la page d'accueil [Bandeau de la homepage](#bandeau-de-la-homepage) fournie en annexe.
 * Section introduction : Nom du site contenant un paragraphe de description.
 * Section "Les PIRES !" : Liste des 5 sites les plus tomatés avec:
@@ -121,12 +71,11 @@ Une liste de boutons sera disponible sur chaque affichage des report (liste ou r
 * Formulaire de dénonciation
 
 ### Page Toutes les Tomates
-* [Wireframe Toutes les tomates](#wireframe-toutes-les-tomates)
 * Contient tous les reports enregistrés avec une pagination
 * Bouton "Reporter un site" menant vers le formulaire de décnonciation de la page d'accueil
 
 ### Page Site tomaté
-* [Wireframe Site tomaté](#wireframe-site-tomaté)
+  
 * Contenu:
   * Auteur du report avec avatar
   * Nom du site tomaté
@@ -144,16 +93,13 @@ Une liste de boutons sera disponible sur chaque affichage des report (liste ou r
   * [Boutons de report](#boutons-de-report)
 
 ### Page Connexion
-* [Wireframe Connexion](#wireframe-connexion)
-* Contenu:
   * Input login
   * Input mot de passe
   * Bouton de connexion
   * Lien "Je n'ai pas de compte" qui renvoie vers la page d'inscription
 
 ### Page d'inscription
-* [Wireframe Inscription](#wireframe-inscription)
-* Contenu: 
+  * Contenu: 
   * Input adresse mail
   * Input pseudonyme
   * Input mot de passe
@@ -164,7 +110,6 @@ Une liste de boutons sera disponible sur chaque affichage des report (liste ou r
 * Précisions en avenant, laisser les pages vides pour le moment
 
 ### Page Membre
-* [Wireframe Inscription](#wireframe-page-membre)
 * S'ouvre au clic sur l'image dans la barre de navigation OU au clic sur un pseudo sur le site
 * Affiche les informations du membre:
   * Pseudo
@@ -175,7 +120,7 @@ Une liste de boutons sera disponible sur chaque affichage des report (liste ou r
   * Bouton d'édition (présent uniquement si l'utilisateur est connecté et qu'il est en train de consulter sa propre page de profil) => Renvoie vers la page d'édition de profil
 
 ### Page Membre - Modification
-* [Wireframe Inscription](#wireframe-page-membre---modification)
+
 * S'ouvre au clic sur le bouton d'édition de profil
 * Permet de modifier les informations suivantes:
   * Email
@@ -214,36 +159,6 @@ Le site devra correctement s'afficher sur l'ensemble des écrans (à partir de 3
 * La première livraison est prévue le 15/12/2022
 
 # Annexes
-
-## Wireframes
-
-### Wireframe Accueil
-
-![](./documents/images/wireframes/Accueil.png)
-
-### Wireframe Inscription
-
-![](./documents/images/wireframes/Inscription.png)
-
-### Wireframe Connexion
-
-![](./documents/images/wireframes/Connexion.png)
-
-### Wireframe Page Membre
-
-![](./documents/images/wireframes/Page_Membre.png)
-
-### Wireframe Page Membre - Modification
-
-![](./documents/images/wireframes/Page_Membre_Modification.png)
-
-### Wireframe Site tomaté
-
-![](./documents/images/wireframes/Site_tomate.png)
-
-### Wireframe Toutes les tomates
-
-![](./documents/images/wireframes/Toutes_les_tomates.png)
 
 ## Images du site
 
