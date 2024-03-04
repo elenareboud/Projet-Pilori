@@ -5,21 +5,24 @@
   "type": "module",
   "scripts": {
     "dev": "node-dev index --clear --notify=false",
-    "start": "node index",
-    "build": "git submodule update --recursive --remote & npm i --prefix inte-pilori & npm run build --prefix inte-pilori"
+    "start": "node index"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-  "node-dev": "^8.0.0"
+    "node-dev": "^8.0.0",
+    "parcel": "^2.12.0"
   },
   "dependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
     "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "feather-icons": "^4.29.1",
+    "reset-css": "^5.0.2",
     "slugify": "^1.6.6",
     "validator": "^13.9.0"
   },
