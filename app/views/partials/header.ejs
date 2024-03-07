@@ -18,20 +18,31 @@
                 <a class="menu-link" href="/tomates/denoncer">Dénoncer</a>
             </nav>
             <div class="header-tools">
-                <form class="search" action="/tomates">
-                    <input class="search-input" name="keywords" type="search" 
+                <form action="/tomates" method="GET" class="search">
+                    <input name="keywords" class="search-input" type="search"
                         placeholder="Rechercher...">
                     <button class="search-submit" type="submit">
                         <i data-feather="search"></i>
                     </button>
                 </form>
                 <div class="account">
-                    <a id="menuToggler" class="account-link
-                        account-link--mobile" href="#"><i data-feather="menu"></i></a>
-                    <a id="searchToggler" class="account-link
-                        account-link--mobile" href="#"><i data-feather="search"></i></a>
-                    <a class="account-link" href="#"><i data-feather="user"></i></a>
-                    <a class="account-link" href="#"><i data-feather="log-out"></i></a>
+                    <a id="menuToggler"
+                        class="account-link account-link--mobile" href="#"><i
+                            data-feather="menu"></i></a>
+                    <a id="searchToggler"
+                        class="account-link account-link--mobile" href="#"><i
+                            data-feather="search"></i></a>
+                    <% if (isLogged) { %>
+                    <a class="account-link" href="/profil" title="Profil"><i
+                            data-feather="user"></i></a>
+                    <a class="account-link" href="/deconnexion"
+                        title="Déconnexion"><i data-feather="log-out"></i></a>
+                    <% } else { %>
+                    <a class="account-link" href="/connexion"
+                        title="Connexion"><i data-feather="log-in"></i></a>
+                    <a class="account-link" href="/inscription"
+                        title="Inscription"><i data-feather="user-plus"></i></a>
+                    <% } %>
                 </div>
             </div>
         </header>
