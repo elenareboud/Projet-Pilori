@@ -1,3 +1,7 @@
+import express from 'express';
+import mainController from './controllers/mainController.js';
+import websiteController from './controllers/websiteController.js';
+import authController from './controllers/authController.js';
 import userController from './controllers/userController.js';
 import isLogged from './middlewares/isLogged.js';
 
