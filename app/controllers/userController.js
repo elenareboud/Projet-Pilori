@@ -1,7 +1,16 @@
+import User from "../models/User.js";
+
 const userController = {
 
-    profil: function (req, res) {
-        res.send('A faire');
+    profil: async function (req, res) {
+        try {
+            const user = await User.read(req.session.userId);
+            res.render('profil', { user: user });
+        }
+        catch (error) {
+            console.error(error);
+            res.status(500).render('error');
+        }
     },
 
 };

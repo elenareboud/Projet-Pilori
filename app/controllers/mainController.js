@@ -1,12 +1,17 @@
-import websites from "../data/websites.js";
+import client from "../database.js";
 
 const mainController = {
 
-    home: function (req, res) {
-        const firstValues = websites.slice(0, 3);
-        res.render('home', {
-            websites: firstValues,
-        });
+    home: async function (req, res) {
+        try {
+            const result = await client.query('SELECT * FROM "website" ORDER BY id DESC LIMIT 3');
+            res.render('home', {
+                websites: result.rows,
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).render('error');
+        }
     },
 
     legals: function (req, res) {
