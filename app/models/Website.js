@@ -9,7 +9,7 @@ class Website {
     #address;
     #device;
     #level;
-    #slug;
+
 
     constructor(config) {
         this.title = config.title;
