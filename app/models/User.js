@@ -80,7 +80,7 @@ class User {
         "hash" = $2
       WHERE id = $3;
     `;
-    const values = [this.emaill, this.hash, this.id];
+    const values = [this.email, this.hash, this.id];
     client.query(text, values);
   }
 
@@ -91,6 +91,21 @@ class User {
     `;
     const values = [this.id];
     client.query(text, values);
+  }
+
+  static async findByEmail(email) {
+    const text = `SELECT * FROM "user" WHERE email = $1;`;
+    const values = [email];
+    try {
+      const result = await client.query(text, values);
+      if (result.rowCount > 0) {
+        return new User(result.rows[0]);
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error('Error database', error);
+    }
   }
 }
 

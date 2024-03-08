@@ -15,7 +15,7 @@ const authController = {
             const foundUser = await client.query('SELECT * FROM "user" WHERE "email" = $1', [req.body.email]);
             if (foundUser.rowCount > 0) {
                 const user = foundUser.rows[0];
-                // si on a trouvé on check le mot de passe, à noter qu'on a utilisé la syntaxe async await avec bcrypt, bien plus sympa
+                // si on a trouvé on check le mot de passe, on a utilisé la syntaxe async await avec bcrypt
                 const result = await bcrypt.compare(req.body.password, user.hash);
                 if (result) {
                     // si c'est ok on est connecté
@@ -47,16 +47,28 @@ const authController = {
             if (!validator.isStrongPassword(req.body.password, options)) {
                 throw new Error('Le mot de passe doit comporter au moins 12 caractères et au moins 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial');
             }
+            // Vérification si l'email existe déjà
+        const existingUser = await User.findByEmail(req.body.email);
+        if (existingUser) {
+            throw new Error('Un compte avec cet email existe déjà.');
+        }
             // on crée le hash
             const hash = await bcrypt.hash(req.body.password, 10);
             req.body.hash = hash;
-            // on crée un objet user
+
+            // Suppression du mot de passe en clair pour éviter de le stocker ou de l'utiliser ultérieurement
+            delete req.body.password;
+
+            // Création d'un objet utilisateur et persistance en base de données
             const user = new User(req.body);
-            // qu'on fait persister en bdd
             await user.create();
-            // pour que l'utilisateur reste connecté on le mémorise en session
+
+            // Maintien de la session utilisateur après l'inscription
             req.session.isLogged = true;
+
+            // Vérifier que l'ID utilisateur est correctement défini après la création
             req.session.userId = user.id;
+            
             res.redirect('/profil');
         } catch (error) {
             console.error(error);
